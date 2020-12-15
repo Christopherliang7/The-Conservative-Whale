@@ -3,7 +3,7 @@ import React from 'react';
 function mammals(props) {
   return (
     <>
-      <h2>Whales Near Me</h2>
+      <h2>Recent Whale Sightings</h2>
       {props.mammals.map(whale =>
           <div key={whale.id}>
             <div>
@@ -14,6 +14,13 @@ function mammals(props) {
             </div>
           </div>
       )}
+      <h2>Total Sightings In Over 40+ Years</h2>
+        <div>
+          <div>Total: {props.total}</div>
+          <div>Orcas: {props.orcas}</div>
+          <div>Humpbacks: {props.humpbacks}</div>
+          <div>Minkes: {props.minkes}</div>
+        </div>
     </>
   )
 };

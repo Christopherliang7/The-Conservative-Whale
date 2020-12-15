@@ -1,7 +1,7 @@
 {
-  "name": "starting-point",
-  "description": "Basic starting point for a Node.js, React, and CSS application",
-  "author": "Julia McNeill",
+  "name": "the-conservative-whale",
+  "description": "spreading awareness for wildlife conservation and tracking",
+  "author": "Christopher Liang",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
