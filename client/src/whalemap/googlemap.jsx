@@ -35,7 +35,7 @@ const WrappedMap = withScriptjs(withGoogleMap((props) => {
               {selectedSight.quantity === null ? '' : 'Group of '}
               {selectedSight.species === '' ? ' unknown mammals' :` ${selectedSight.species.charAt(0).toUpperCase()}${selectedSight.species.slice(1)}`} sighted near 
               {selectedSight.location === '' ? ' unknown location in Washington' : ` ${selectedSight.location}`} at 
-              {selectedSight.sighted_at === '' ? ' unknown time' : ` ${selectedSight.sighted_at}`} 
+              {selectedSight.sighted_at === '' ? ' unknown time' : ` ${selectedSight.sighted_at.replace(/T/g, ' ').replace(/Z/g, ' ')}`} 
             </div>
           </div>
         </InfoWindow>

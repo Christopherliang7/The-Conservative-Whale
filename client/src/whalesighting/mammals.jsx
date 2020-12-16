@@ -10,7 +10,7 @@ function mammals(props) {
               - {whale.quantity === null ? '' : 'Group of '}
               {whale.species === '' ? ' unknown mammals' :` ${whale.species.charAt(0).toUpperCase()}${whale.species.slice(1)}`} sighted near 
               {whale.location === '' ? ' unknown location in Washington' : ` ${whale.location}`} at 
-              {whale.sighted_at === '' ? ' unknown time' : ` ${whale.sighted_at}`} 
+              {whale.sighted_at === '' ? ' unknown time' : ` ${whale.sighted_at.replace(/T/g, ' ').replace(/Z/g, ' ')}`} 
             </div>
           </div>
       )}

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import WhaleMap from './whalemap/whalemap.jsx';
 import Mammals from './whalesighting/mammals.jsx';
 import Sighting from './whalesighting/sightings.jsx';
+import About from './about.jsx'
 import axios from "axios";
 
 class App extends React.Component {
@@ -16,8 +17,10 @@ class App extends React.Component {
       orcas: 0,
       humpbacks: 0,
       others: 0,
+      page: 'sightings',
     }
     this.update = this.update.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   componentDidMount() {
@@ -46,29 +49,41 @@ class App extends React.Component {
     }
   }
 
+  changeView(view) {
+    this.setState({page: view}, this.update2)
+  }
+
+  update2() {
+    console.log(this.state.page)
+  }
+
   render() {
     return (
       <>
         <div className='header'>
           <div className='container'>
-            <div className='title'><h1>The Conservative Whale</h1></div>
+            <div className='title' onClick={() => this.changeView('sightings')}><h1>The Conservative Whale</h1></div>
             <div className='navigation'>
-              <p className='nav-list'>Feed</p>
-              <p className='nav-list'>Posts</p>
-              <p className='nav-list'>Profile</p>
+              <p className='nav-list' onClick={() => this.changeView('sightings')}>Sight Log</p>
+              <p className='nav-list' onClick={() => this.changeView('about')}>About</p>
+              <p className='nav-list' onClick={() => this.changeView('posts')}>Posts</p>
             </div>
           </div>
         </div>
-
-        <WhaleMap mammals={this.state.mammals}/>
-        <Mammals 
-          mammals={this.state.mammals}
-          total={this.state.total}
-          orcas={this.state.orcas}
-          humpbacks={this.state.humpbacks}
-          others={this.state.others}
-        />
-        <Sighting />
+        {this.state.page === 'sightings' &&
+          <div>
+            <WhaleMap mammals={this.state.mammals}/>
+            <Mammals 
+              mammals={this.state.mammals}
+              total={this.state.total}
+              orcas={this.state.orcas}
+              humpbacks={this.state.humpbacks}
+              others={this.state.others}
+            />
+          </div>
+        }
+        {this.state.page === 'posts' && <Sighting />}
+        {this.state.page === 'about' && <About />}
       </>
     )
   }
