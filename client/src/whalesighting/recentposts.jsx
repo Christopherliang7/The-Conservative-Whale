@@ -8,8 +8,9 @@ function RecentPosts(props) {
         return (
           <>
             <div>
-            <div>{post.title}</div>
-            <div>{post.description}</div>
+              <div><h3>{post.title}</h3></div>
+              <div><img src='https://orcawhalewatch.com/wp-content/uploads/2016/03/whale-watching.jpg' alt=''/></div>
+              <div><p>{post.description}</p></div>
             </div>
             <br></br>
           </>
