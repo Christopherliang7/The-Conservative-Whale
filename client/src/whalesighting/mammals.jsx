@@ -9,17 +9,17 @@ function mammals(props) {
             <div>
               - {whale.quantity === null ? '' : 'Group of '}
               {whale.species === '' ? ' unknown mammals' :` ${whale.species.charAt(0).toUpperCase()}${whale.species.slice(1)}`} seen at 
-              {whale.location === '' ? ' unknown location in Washington' : ` ${whale.location}`} sighted at 
+              {whale.location === '' ? ' unknown location in Washington' : ` ${whale.location}`} sighted near 
               {whale.sighted_at === '' ? ' unknown time' : ` ${whale.sighted_at}`} 
             </div>
           </div>
       )}
-      <h2>Total Sightings In Over 40+ Years</h2>
+      <h2>Total Sightings In The Past 40+ Years</h2>
         <div>
           <div>Total: {props.total}</div>
           <div>Orcas: {props.orcas}</div>
           <div>Humpbacks: {props.humpbacks}</div>
-          <div>Minkes: {props.minkes}</div>
+          <div>Others: {props.others}</div>
         </div>
     </>
   )
