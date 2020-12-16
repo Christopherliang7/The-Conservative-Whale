@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import 'regenerator-runtime';
 
 class Sighting extends React.Component {
@@ -10,21 +11,20 @@ class Sighting extends React.Component {
     }
     
     this.updateState = this.updateState.bind(this);
-    this.update = this.update.bind(this);
+    this.submitPost = this.submitPost.bind(this);
   }
 
   updateState(event) {
-    event.preventDefault()
+    event.preventDefault();
     const { name, value } = event.target
-    this.setState({[name]: value}, this.update);
+    this.setState({[name]: value});
   }
 
   submitPost(event) {
-    event.preventDefault()
-  }
-
-  update() {
-    console.log(this.state);
+    event.preventDefault();
+    axios.post('/posts', { title: this.state.Title, description: this.state.Description })
+      .then(() => { console.log('Successfully Created a Post!;') })
+      .catch((error) => {console.log('Error in Creating Post: ',  error)});
   }
 
   render() {
