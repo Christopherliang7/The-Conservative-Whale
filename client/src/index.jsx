@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import WhaleMap from './whalemap/map.jsx';
+import WhaleMap from './whalemap/whalemap.jsx';
 import Mammals from './whalesighting/mammals.jsx';
 import Sighting from './whalesighting/sightings.jsx';
 import axios from "axios";
@@ -49,11 +49,15 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className='nav-bar'>
-            <h1>The Conservative Whale</h1>
-            <p>Feed</p>
-            <p>Posts</p>
-            <p>Profile</p>
+        <div className='header'>
+          <div className='container'>
+            <div className='title'><h1>The Conservative Whale</h1></div>
+            <div className='navigation'>
+              <p className='nav-list'>Feed</p>
+              <p className='nav-list'>Posts</p>
+              <p className='nav-list'>Profile</p>
+            </div>
+          </div>
         </div>
 
         <WhaleMap mammals={this.state.mammals}/>

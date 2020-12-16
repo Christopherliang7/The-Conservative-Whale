@@ -1,18 +1,6 @@
 import React from 'react';
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
-import { api_key } from '../../../config.js'
-
-const WrappedMap = withScriptjs(withGoogleMap((props) =>
-  <GoogleMap 
-    defaultZoom={10}
-    defaultCenter={{lat: 47.606209, lng: -122.332069}}
-  >
-    {props.mammals.map(mammal => (
-      <Marker key={mammal.id} position={{ lat: mammal.latitude, lng: mammal.longitude}}/>
-    ))}
-  </GoogleMap>
-))
-
+import WrappedMap from './googlemap.jsx';
+import { api_key } from '../../../config.js';
 
 function WhaleMap(props) {
   return (
