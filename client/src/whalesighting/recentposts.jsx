@@ -1,9 +1,19 @@
 import React from 'react';
 
-function RecentPosts() {
+function RecentPosts(props) {
   return (
     <>
-      <h1> Recent Posts </h1>
+      <h2> Recent Posts </h2>
+      {console.log(props)}
+      {props.posts.map((post) => {
+        return (
+          <>
+            <div>{post.title}</div>
+            <div>{post.description}</div>
+            <br></br>
+          </>
+        )
+      })}
     </>
   )
 }

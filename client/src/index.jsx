@@ -11,14 +11,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      latitude: '',
-      longitude: '',
       mammals: [],
       total: 0,
       orcas: 0,
       humpbacks: 0,
       others: 0,
       page: 'sightings',
+      posts: []
     }
     this.update = this.update.bind(this);
     this.changeView = this.changeView.bind(this);
@@ -26,6 +25,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.update();
+    axios.get('/posts')
+      .then((results) => { this.setState({posts: results.data}); })
   }
 
   async update() {
@@ -55,7 +56,7 @@ class App extends React.Component {
   }
 
   update2() {
-    console.log(this.state.page)
+    console.log('State: ', this.state.posts)
   }
 
   render() {
@@ -86,7 +87,7 @@ class App extends React.Component {
         {this.state.page === 'posts' && 
           <div>
             <Sighting />
-            <RecentPosts />
+            <RecentPosts posts={this.state.posts}/>
           </div>}
         {this.state.page === 'about' && <About />}
       </>
