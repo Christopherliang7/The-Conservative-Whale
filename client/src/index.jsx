@@ -27,6 +27,7 @@ class App extends React.Component {
     this.update();
     axios.get('/posts')
       .then((results) => { this.setState({posts: results.data}); })
+      .catch((error) => { console.log('Error in getting Posts: ', error)});
   }
 
   async update() {
@@ -53,10 +54,6 @@ class App extends React.Component {
 
   changeView(view) {
     this.setState({page: view})
-  }
-
-  update2() {
-    console.log('State: ', this.state.posts)
   }
 
   render() {
