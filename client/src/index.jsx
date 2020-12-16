@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import WhaleMap from './whalemap/whalemap.jsx';
 import Mammals from './whalesighting/mammals.jsx';
 import Sighting from './whalesighting/sightings.jsx';
-import About from './about.jsx'
+import RecentPosts from './whalesighting/recentposts.jsx';
+import About from './about.jsx';
 import axios from "axios";
 
 class App extends React.Component {
@@ -50,7 +51,7 @@ class App extends React.Component {
   }
 
   changeView(view) {
-    this.setState({page: view}, this.update2)
+    this.setState({page: view})
   }
 
   update2() {
@@ -65,7 +66,7 @@ class App extends React.Component {
             <div className='title' onClick={() => this.changeView('sightings')}><h1>The Conservative Whale</h1></div>
             <div className='navigation'>
               <p className='nav-list' onClick={() => this.changeView('sightings')}>Sight Log</p>
-              <p className='nav-list' onClick={() => this.changeView('about')}>About</p>
+              <p className='nav-list' onClick={() => this.changeView('about')}>About Us</p>
               <p className='nav-list' onClick={() => this.changeView('posts')}>Posts</p>
             </div>
           </div>
@@ -82,7 +83,11 @@ class App extends React.Component {
             />
           </div>
         }
-        {this.state.page === 'posts' && <Sighting />}
+        {this.state.page === 'posts' && 
+          <div>
+            <Sighting />
+            <RecentPosts />
+          </div>}
         {this.state.page === 'about' && <About />}
       </>
     )

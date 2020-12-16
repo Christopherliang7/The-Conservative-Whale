@@ -5,28 +5,36 @@ class Sighting extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      Species: '',
-      Quantity: 1,
-      Description: '',
-      Photo_Url: '',
-      Latitude: null,
-      Longitude: null,
-      TimeSighted: '',
+      Title: null,
+      Description: null,
     }
+    
+    this.updateState = this.updateState.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  updateState(event) {
+    event.preventDefault()
+    const { name, value } = event.target
+    this.setState({[name]: value}, this.update);
+  }
+
+  submitPost(event) {
+    event.preventDefault()
+  }
+
+  update() {
+    console.log(this.state);
   }
 
   render() {
     return (
       <>
         <h2>Post a Whale Sighting: </h2>
-        <form>
-          <input type="text" name="species" placeholder="Species" />
-          <input type="number" name="quantity" placeholder="How Many Did You See?" />
-          <textarea type="text" name="description" placeholder="Description" />
-          <input type="text" name="photo_url" placeholder="Photo Url" />
-          <input type="number" name="latitude" placeholder="Latitude" />
-          <input type="number" name="longitude" placeholder="Longitude" />
-          <input  type="text" name="sighted at" placeholder="Time and Date Sighted" />
+        <form onSubmit={(event) => this.submitPost(event)}>
+          <input type="text" name="Title" placeholder="Title" onChange={(event) => this.updateState(event)}/>
+          <br></br>
+          <textarea type="text" name="Description" placeholder="Tell Us About What You Saw!" onChange={(event) => this.updateState(event)}/>
           <input type='submit'/>
         </form>
       </>
