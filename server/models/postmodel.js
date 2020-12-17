@@ -9,7 +9,7 @@ const dbConnection = mysql.createConnection({
 });
 
 const db = dbConnection;
-db.connect((error) => error ? console.log('Error connecting to Db: ', err) : console.log('Connected to Db!'));
+db.connect((error) => error ? console.log('Error connecting to Db: ', error) : console.log('Connected to Db!'));
 
 module.exports = { 
   modelsGetPosts: (callback) => {

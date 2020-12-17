@@ -3,21 +3,19 @@
 body {
   font-family: "Work Sans", Helvetica, sans-serif;
   color: #2c3e50;
+  margin: 0;
 }
 
 .title {
   cursor: pointer;
   color: #2c3e50;
+  padding-left: 10px;
 }
 
 .nav-list {
   cursor: pointer;
   float: right;
-  padding: 0 5px 0 5px;
-}
-
-.wrapped_map {
-  position: relative !important;
+  padding: 0 15px 0 15px;
 }
 
 .stats_container {
@@ -62,7 +60,12 @@ body {
   padding: 10px;
 }
 
-.geo_button, .sighting_button, .email_submit {
+.address_input {
+  width: 250px;
+  height:21px;
+}
+
+.geo_button, .sighting_button, .email_submit, .address_button {
   padding: 0.35em 1.2em;
   border: 0.1em solid #030303;
   margin: 0 0.3em 0.3em 0;

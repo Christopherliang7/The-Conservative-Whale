@@ -5,7 +5,7 @@ USE Whales;
 CREATE TABLE IF NOT EXISTS SightingsPost (
   sighting_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR (50) NOT NULL,
-  description VARCHAR (150) NOT NULL
+  description VARCHAR (1500) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Photos (
