@@ -24,6 +24,7 @@ class Sighting extends React.Component {
     event.preventDefault();
     axios.post('/posts', { title: this.state.Title, description: this.state.Description })
       .then(() => { console.log('Successfully Created a Post!;') })
+      .then(() => { this.props.getPosts()})
       .catch((error) => {console.log('Error in Creating Post: ',  error)});
   }
 
