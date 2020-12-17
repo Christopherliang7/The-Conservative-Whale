@@ -7,8 +7,168 @@ body {
 
 .title {
   cursor: pointer;
+  color: #4a98ac;
 }
 
 .nav-list {
   cursor: pointer;
+  float: right;
+  padding: 0 5px 0 5px;
+}
+
+.wrapped_map {
+  position: relative !important;
+}
+
+.stats_container {
+  margin: 0 auto;
+}
+
+.sightings_list {
+  display: block;
+  text-align: center;
+}
+
+.total_sightings {
+  margin: 0 auto;
+  display: flex;
+  padding: 25px 15px 25px 15px;
+}
+
+.mammals_title1, .mammals_title2 {
+  display: block;
+  text-align: center;
+}
+
+.mammals_container1, .mammals_container2 {
+  padding: 0 0 50px 0;
+}
+
+.one_sight {
+  padding: 5px 0 5px 0;
+}
+
+.sight_stat {
+  margin: 0 auto;
+  padding: 0 1px 0 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.geolocation_buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.geo_button, .sighting_button, .email_submit {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #030303;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.about_container {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.about_title, .subscription_title {
+  display: block;
+  text-align: center;
+}
+
+.about_picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.about_description {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.subscription_form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sighting_title {
+  display: block;
+  text-align: center;
+}
+
+.sighting_form {
+  display: block;
+  text-align: center;
+}
+
+.sighting_form_title {
+  font-family: "Work Sans", Helvetica, sans-serif;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.sighting_form_description {
+  font-family: "Work Sans", Helvetica, sans-serif;
+  max-width: 100%;
+  min-height: 160px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.post_container {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post_title, .recent_post_title {
+  display: block;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.post_image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding: 10px 0px 10px 0px;
+}
+
+.post_description {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding: 10px 0px 10px 0px;
 }

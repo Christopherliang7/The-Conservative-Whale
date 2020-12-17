@@ -30,12 +30,13 @@ class Sighting extends React.Component {
   render() {
     return (
       <>
-        <h2>Post a Whale Sighting: </h2>
-        <form onSubmit={(event) => this.submitPost(event)}>
-          <input type="text" name="Title" placeholder="Title" onChange={(event) => this.updateState(event)}/>
+        <h2 className='sighting_title'>Post a Whale Sighting: </h2>
+        <form className='sighting_form' onSubmit={(event) => this.submitPost(event)}>
+          <input className='sighting_form_title' type="text" name="Title" placeholder="Title" onChange={(event) => this.updateState(event)}/>
           <br></br>
-          <textarea type="text" name="Description" placeholder="Tell Us About What You Saw!" onChange={(event) => this.updateState(event)}/>
-          <input type='submit'/>
+          <textarea className='sighting_form_description' type="text" name="Description" placeholder="Tell Us About What You Saw!" onChange={(event) => this.updateState(event)}/>
+          <br></br>
+          <input className='sighting_button' type='submit'/>
         </form>
       </>
     )
