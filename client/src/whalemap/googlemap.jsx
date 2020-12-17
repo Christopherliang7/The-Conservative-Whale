@@ -8,8 +8,10 @@ const WrappedMap = withScriptjs(withGoogleMap((props) => {
     <GoogleMap 
       className='maps'
       defaultZoom={10}
-      defaultCenter={{lat: 47.606209, lng: -122.332069}}
-      >
+      defaultCenter={{lat: props.latitude, lng: props.longitude}}
+
+    >
+      <Marker position={{ lat: props.latitude, lng: props.longitude}}/>
       {props.mammals.map(mammal => (
         <Marker 
           key={mammal.id} 

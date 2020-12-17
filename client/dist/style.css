@@ -11,4 +11,66 @@ body {
 
 .nav-list {
   cursor: pointer;
+  float: right;
+  padding: 0 5px 0 5px;
+}
+
+.wrapped_map {
+  position: relative !important;
+}
+
+.stats_container {
+  margin: 0 auto;
+}
+
+.sightings_list {
+  display: block;
+  text-align: center;
+}
+
+.total_sightings {
+  margin: 0 auto;
+  display: flex;
+  padding: 25px 15px 25px 15px;
+}
+
+.mammals_title1, .mammals_title2 {
+  display: block;
+  text-align: center;
+}
+
+.mammals_container1, .mammals_container2 {
+  padding: 0 0 50px 0;
+}
+
+.one_sight {
+  padding: 5px 0 5px 0;
+}
+
+.sight_stat {
+  margin: 0 auto;
+  padding: 0 1px 0 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.geolocation_buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.geo_button {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #030303;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
 }
