@@ -74,3 +74,53 @@ body {
   text-align: center;
   transition: all 0.2s;
 }
+
+.about_container {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.about_title, .subscription_title {
+  display: block;
+  text-align: center;
+}
+
+.about_picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.about_description {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.subscription_form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.email_input {
+  
+}
+
+.email_submit {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #030303;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
