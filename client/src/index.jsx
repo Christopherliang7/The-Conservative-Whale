@@ -27,6 +27,7 @@ class App extends React.Component {
     this.handleError = this.handleError.bind(this);
     this.update = this.update.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.getPosts = this.getPosts.bind(this);
   }
   
   // Retrieving Geolocation
@@ -65,6 +66,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.update();
+    this.getPosts();
+  }
+
+  getPosts() {
     axios.get('/posts')
       .then((results) => { this.setState({posts: results.data}); })
       .catch((error) => { console.log('Error in getting Posts: ', error)});
@@ -138,7 +143,7 @@ class App extends React.Component {
         
         {this.state.page === 'posts' && 
           <div>
-            <Sighting />
+            <Sighting getPosts={this.getPosts}/>
             <RecentPosts posts={this.state.posts}/>
           </div>}
 
