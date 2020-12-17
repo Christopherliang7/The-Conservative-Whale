@@ -6,11 +6,13 @@ import Sighting from './whalesighting/sightings.jsx';
 import RecentPosts from './whalesighting/recentposts.jsx';
 import About from './about.jsx';
 import axios from "axios";
+import { api_key } from '../../config.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      address: '',
       latitude: 47.606209,
       longitude: -122.332069,
       mammals: [],
@@ -28,6 +30,33 @@ class App extends React.Component {
     this.update = this.update.bind(this);
     this.changeView = this.changeView.bind(this);
     this.getPosts = this.getPosts.bind(this);
+    this.getLocationFromAddress = this.getLocationFromAddress.bind(this);
+  }
+
+  // Retrieving Location From Address
+  getLocationFromAddress() {
+    const location = this.state.address;
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: location,
+        key: api_key
+      }
+    })
+      .then((result) => {this.setState({
+        latitude: result.data.results[0].geometry.location.lat,
+        longitude: result.data.results[0].geometry.location.lng})})
+      .catch((error) => {console.log(error); })
+  }
+
+  changeAddress(event) {
+    event.preventDefault();
+    const {name, value} = event.target;
+    this.setState({[name]: value});
+  }
+
+  submitAddress(event) {
+    event.preventDefault();
+    this.getLocationFromAddress();
   }
   
   // Retrieving Geolocation
@@ -126,9 +155,13 @@ class App extends React.Component {
             <div className='geolocation_buttons'>
               <div><button className='geo_button' onClick={() => this.setSeattle()}>Seattle</button></div>
               <div><button className='geo_button' onClick={() => this.getLocation()}>Find Near Me!</button></div>
+              <form onSubmit={(event) => this.submitAddress(event)}>
+                <input className='address_input' type='text' name='address' placeholder='Address' onChange={(event) => this.changeAddress(event)}/>
+                <input className='address_button' type='submit'/>
+              </form>
             </div>
             <div className='stats_container'>
-              <Mammals 
+              <Mammals
                 latitude={this.state.latitude}
                 longitude={this.state.longitude}
                 mammals={this.state.mammals}
